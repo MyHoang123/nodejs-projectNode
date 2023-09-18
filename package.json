@@ -1,0 +1,26 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "backend Nodejs",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyHoang123/nodejs-projectNode.git"
+  },
+  "author": "2000134_TranHoangMy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MyHoang123/nodejs-projectNode/issues"
+  },
+  "homepage": "https://github.com/MyHoang123/nodejs-projectNode#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
