@@ -1,0 +1,17 @@
+ <nav class="category">
+            <h3 class="category_heading">
+                <i class="category_heading-icon fa-solid fa-list"></i>
+                Danh mục
+            </h3>
+            <ul class="category-list ">
+              {{#each category}}
+                <li class="category-item ">
+                    <a href="index.php?controller=product&action=typeproduct&param=<?php echo $r['tenNhom']; ?> " class="category-item__link">{{this.tenNhom}}</a>
+                </li>
+              {{/each}}
+                <li class="category-item ">     
+                    <a href="index.php" class="category-item__link">Tất cả</a>
+                </li>
+    
+            </ul>
+        </nav>

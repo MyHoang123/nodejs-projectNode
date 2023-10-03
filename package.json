@@ -19,11 +19,16 @@
   },
   "homepage": "https://github.com/MyHoang123/nodejs-projectNode#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
     "handlebars": "^4.7.8",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.1",
     "nodemon": "^3.0.1",
     "sass": "^1.68.0"
   },

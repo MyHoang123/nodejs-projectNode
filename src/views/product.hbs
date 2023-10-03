@@ -1,0 +1,294 @@
+
+<div class="home-product ">
+<div class="home-filter hide-on-mobile-tablet">
+    <span class="home-filter_label">Sắp xếp theo</span>
+    <a href="index.php?controller=product&action=randomproduct" class="home-filter_btn btn">Ngẫu nhiên</a>
+    <a href="index.php?controller=product&action=newproduct" class="home-filter_btn btn ">Mới nhất</a>
+    
+    <div class="select-input">
+        <span class="select-input_label">Giá</span>
+        <i class="select-input_icon fa-solid fa-chevron-down"></i>
+        <ul class="select-input_list">
+            <li class="select-input_item">
+                <a href="index.php?controller=product&action=minproduct" class="select-input_item-link">Giá: Thấp đến cao</a>
+            </li>
+            <li class="select-input_item">
+                <a href="index.php?controller=product&action=maxproduct" class="select-input_item-link">Giá: Cao đến thấp</a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- <div class="home-filter_page">
+        <span class="home-filter_page-num">
+            <span class="home-filter_page-current">1</span>
+            /14
+        </span>
+
+        <div class="home-filter_page-control">
+            <a href="" class="home-filter_page-btn home-filter_page-btn--disable">
+                <span class="home-filter_page-icon"><</span>
+            </a>
+            <a href="" class="home-filter_page-btn">
+                <span class="home-filter_page-icon">></span>
+            </a>
+        </div>
+    </div> -->
+</div>
+<nav class="mobile-category">
+    <ul class="mobile-category_list">
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+        <li class="mobile-category_item">
+            <a href="" class="mobile-category_link">Dụng cụ tiện ích</a>
+        </li>
+    </ul>
+        
+</nav>
+    <div  class="row sm-gutter">
+        {{#each data}}
+        <div class="col l-2-4 m-4 c-6">
+            <a id="product" type="button" class="home-product-item js_product-item" value="<?php echo $r['idSP'] ?>"onclick = "getProduct(<?php echo $stt ?>)">
+                    <div class="home-product-item_img" style="background-image: url(/img/{{this.hinhSP}});"></div>
+                        {{!-- <p  style="display: none;" class="js_img-product">./views/Asset/img/<?php echo $r['hinhSP'] ?></p>
+                        <p  style="display: none;" class = "is_img-input"><?php echo $r['hinhSP'] ?></p> --}}
+                <h4 class="home-product-item_name">{{this.tenSP}}</h4>
+                <div class="home-product-item_price">
+                    <span class="home-product-item_price-old">{{this.giaSP}}đ </span>
+                    {{!-- <span class="home-product-item_price-current">{{number_format(this.giaSP,0,".",",")}}đ</span> --}}
+                    {{!-- <span class="js_price" style="display: none"><?php echo $r['giaSP'] ?> </span> --}}
+                </div>
+                <div class="home-product-item_action">
+                    <span class="home-product-item_like home-product-item_like--liked">
+                        <i class="home-product-item_like-icon-empty fa-regular fa-heart"></i>
+                        <i class="home-product-item_like-icon-fill fa-solid fa-heart"></i>
+                    </span>
+                    <div class="home-product-item_rating">
+                        <i class="home-product-item_stargold fa-solid fa-star"></i>
+                        <i class="home-product-item_stargold fa-solid fa-star"></i>
+                        <i class="home-product-item_stargold fa-solid fa-star"></i>
+                        <i class="home-product-item_stargold fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="home-product-item_sold">Đã bán ....</div>
+                <div class="home-product-item_origin">
+                    <span class="home-product-item_brand">Hiệu: 
+                    <?php 
+                    if($r['idNhom']==1){
+                        echo "Nike";
+                    }else if($r['idNhom']==2){
+                        echo "Adidas";
+                    }else{
+                        echo "Khác";
+                    }
+                    ?>
+                    </span>
+                    <span class="home-product-item_country">Nước ngoài</span>
+                </div>
+                <div class="home-product-item_favourite">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Yêu thích</span> 
+                </div>
+                <div class="home-product-item_sale-off">
+                    <span class="home-product-item_sale-off-percent">10%</span>
+                    <span class="home-product-item_sale-off-label">GIẢM</span>
+                </div>
+            </a>
+        </div>
+  
+{{/each}}
+    </div>
+</div>
+<!-- Phân trang -->
+<?php 
+ $rowcount = mysqli_num_rows($allProduct);
+ $trang = ceil($rowcount/10);
+?>
+<?php
+if(!isset($_GET['page'])){
+    $page = 1;
+}
+else {
+    $page = $_GET['page'];
+}
+$prev = $page - 1;
+$next = $page + 1;
+
+?>
+<ul class="pagination home-product_pagination">
+    <li class="pagination-item">
+        <a href="index.php?page= <?php echo $prev ?>" class="pagination-item-link">
+            <i class="pagination-item-icon fa-solid fa-chevron-left"></i>
+        </a>
+    </li>
+    <?php } ?>
+    <?php for($i = 1; $i <= $trang; $i++){ ?>
+    <li class="pagination-item <?php if($i == $page){echo 'color-page';} ?>">
+        <a href="index.php?page=<?php echo $i ?>" class="pagination-item-link " style="color:#333;font-weight:700;">
+            <?php echo $i; ?>
+        </a>
+    </li>
+    <?php } ?>
+    <?php if($next <= $trang) { ?>
+    <li class="pagination-item">
+        <a href="index.php?page= <?php echo $next ?>" class="pagination-item-link">
+            <i class="pagination-item-icon fa-solid fa-chevron-right"></i>
+        </a>
+    </li>
+    <?php } ?>
+</ul>
+    </div>
+    </div>
+    <!-- model -->
+<link rel="stylesheet" href="./Asset/css/detail.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div class="model_detail-of">
+        <section class="detail_product">
+            <div class="delete_model"><i class="fa-sharp fa-solid fa-minus"></i></div>
+            <div class="detail_product__photo">
+                <div class="detail_photo-container" style="max-height: 500px;">
+                    <div class="detail_photo-main">
+                        <div class="detail_controls">
+                        <div class="star">
+                            <i class="fas fa-star stari"></i>
+                            <i class="fas fa-star stari"></i>
+                            <i class="fas fa-star stari"></i>
+                            <i class="fas fa-star stari"></i>
+                            <i class="fas fa-star stari"></i>
+                        </div>
+                            <i class="material-icons"></i>
+                        </div>
+                        <img style="height: 300px;" src="" class="detail_product-img" alt="green apple slice">
+                    </div>
+                    <div class="detail_photo-album">
+                        <ul class="detail_list-photo-album">
+                            <li class="detail_photo-album-item"><img class="js_img-mini" src="" alt="green apple"></li>
+                            <li class="detail_photo-album-item"><img class="js_img-mini" src="" alt="half apple"></li>
+                            <li class="detail_photo-album-item"><img class="js_img-mini" src="" alt="green apple"></li>
+                            <li class="detail_photo-album-item"><img class="js_img-mini" src="" alt="apple top"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="detail_product__info">
+                <div class="detail_title">
+                    <h1 class = "js_update-name"></h1>
+                    <span class = "js_update-priceo"></span>
+                </div>
+                <div class="detail_price">
+                     <span class = "js_update-pricen"></span>
+                </div>
+                <form action="index.php?controller=Cart&action=addCart" method="post" class="detail_variant">
+                    <h3>SELECT A COLOR</h3>
+                    <ul class="detail_variant-list" style="display:flex; justify-content: space-around;margin-left:-20px;margin-right:20px;">
+                        <li>
+                            <label style=" position: absolute;bottom: 45.7%;    margin-left: 22px; text-align:center;font-weight:700; font-size: 1.4rem;transform: translateY(-33px);    margin-bottom: -40px;">39</label>
+                            <input  type="radio" name='size' value="39" style=" background-color:#c9cfcd;width:45px;height:40px;border:2px solid #000; " required>
+                            </input>
+                        </li>
+                        <li>
+                            <label style=" position: absolute;bottom: 45.7%;    margin-left: 22px; text-align:center;font-weight:700; font-size: 1.4rem;transform: translateY(-33px);    margin-bottom: -40px;">40</label>
+                            <input type="radio" name='size'value="40"  style="background-color:#c9cfcd;width:45px;height:40px;border:2px solid #000;">
+                            </input>
+                        </li>
+                        <li>
+                            <label style=" position: absolute;bottom: 45.7%;     margin-left: 22px; text-align:center;font-weight:700; font-size: 1.4rem;transform: translateY(-33px);    margin-bottom: -40px;">41</label>
+                            <input type="radio" name='size'value="45"  style="background-color:#c9cfcd;width:45px;height:40px;border:2px solid #000;">
+                            </input>
+                        </li>
+                        <li>
+                            <label style=" position: absolute;bottom: 45.7%;    margin-left: 22px; text-align:center;font-weight:700; font-size: 1.4rem;transform: translateY(-33px);    margin-bottom: -40px;">42</label>
+                            <input type="radio" name='size'value="32"  style="background-color:#c9cfcd;width:45px;height:40px;border:2px solid #000;">
+                            </input>
+                        </li>
+                        <input type="hidden" name="tenSP" value=""> 
+                        <input type="hidden" name="giaSP" value="">
+                        <input type="hidden" name="hinhSP" value="">
+                    </ul>		
+                <div class="detail_description">
+                    <h3>Số lượng sản phẩm</h3>
+                    <input style="margin-left:10px;height: 30px;width:75px;font-size: 20px;font-weight: 700;" class="detail_quantity" type="number" value="1" name="quantity" size="" >
+                </div>
+                <button name="addcart" type="submit" class="detail_buy--btn" style="display:flex;align-items:center;max-width:300px;">
+                    <i style="font-size:20px;margin-right:15px;"  class="fas fa-shopping-cart carti"></i>
+                    <p style="font-size:14px;">Thêm vào giỏ hàng</p>
+                </button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+<!--  -->
+<script>
+    const products = document.querySelectorAll('.js_product-item');
+    const model = document.querySelector('.model_detail-of');
+    const remove =document.querySelector('.delete_model');
+    const modelContainer =document.querySelector('.detail_product');
+        function showModelDtail () {
+            model.classList.add('open')
+        }
+        function remModelDtail() {
+            model.classList.remove('open');
+        }
+        for (const product of products) {
+            product.addEventListener('click', showModelDtail)
+        }
+        remove.addEventListener('click', remModelDtail);
+        model.addEventListener('click', remModelDtail);
+        modelContainer.addEventListener('click', function(e) {
+            e.stopPropagation();
+        })
+function getProduct(stt) {
+    // Lấy sản phẩm
+        let name = document.getElementsByClassName('home-product-item_name')[stt].innerHTML;
+        let priceo = document.getElementsByClassName('home-product-item_price-old')[stt].innerHTML;
+        let pricen = document.getElementsByClassName('home-product-item_price-current')[stt].innerHTML;
+        let imgProduct = document.getElementsByClassName('js_img-product')[stt].innerHTML;
+        let imgInput =document.getElementsByClassName('is_img-input')[stt].innerHTML;
+    // Gán sản phẩm vừa lấy vào form 
+        let updateImgProduct = document.getElementsByClassName('detail_product-img')[0].src = imgProduct;
+        let updatePriceo =  document.getElementsByClassName('js_update-priceo')[0].innerHTML = "COD: " + priceo;
+        let updatePricen =  document.getElementsByClassName('js_update-pricen')[0].innerHTML = "R$: " + pricen ;
+        let updateName = document.getElementsByClassName('js_update-name')[0].innerHTML = name;
+        var i = 0;
+        while(i <= 3){
+        let updateImgMini = document.getElementsByClassName('js_img-mini')[i].src = imgProduct;
+        i++;
+        }
+        let updateNameSp = document.getElementsByName('tenSP')[0].value = name;
+        let updatePriceSp = document.getElementsByClassName('js_price')[stt].innerHTML;
+        let updatePrice = document.getElementsByName('giaSP')[0].value = updatePriceSp;
+        let insertInputImg =document.getElementsByName('hinhSP')[0].value = imgInput;
+}
+</script>

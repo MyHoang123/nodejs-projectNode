@@ -1,35 +1,309 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header style="height : 132px" class="header">
+            <div class="grid wide">
+                <!-- NAVBAR -->
+                <nav style="height : 47px" class="header_navbar hide-on-mobile-tablet">
+                    <!-- Nav trái -->
+                    <ul class="header_navbar-list">
+                        <li class="header_navbar-item header_navbar-item--has-qr header_navbar-item--separate">
+                            <p style="margin:0;font-weight:900;font-size:1.8rem;">
+                            <a style="text-decoration:none;color:white;" href="index.php">Trang chủ</a>
+                        </p>
+                            <!-- HEADER QR -->
+                            <div class="header_qr">
+                                <img src="/img/d91264e165ed6facc6178994d5afae79.png" alt="" class="header_qr-img">
+                                <div class="header_qr-apps">
+                                   <a href="" class="header_qr-link">
+                                        <img src="/img/appstore.png" alt="" class="header_qr-link-img">
+                                    </a>
+                                    <a href="" class="header_qr-link">
+                                        <img src="/img/adidas1.jpg" alt="" class="header_qr-link-img">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--  -->
+                        </li>
+                        <li class="header_navbar-item">
+                            <span class="header_navbar-tile--no-pointer">
+                                <p style="margin:0;font-weight:600;font-size:1.7rem;">Kết nối</p>
+                            </span>
+                            <a href="https://www.facebook.com/nhdk2k" class="header_navbar-icon-link">
+                                <i class="header_navbar-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/khoa1647" class="header_navbar-icon-link">
+                                <i class="header_navbar-icon fa-brands fa-instagram"></i>
+                            </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                    <!-- Nav phải -->
+                    <ul class="header_navbar-list">
+                        <li class="header_navbar-item header_navbar-item-has-noti">
+                            <a href="" class="header_navbar-item-link">
+                                <i class="header_navbar-icon fa-solid fa-bell"></i>
+                                <p style="margin:0;font-weight:600;font-size:1.6rem;">Thông báo</p>
+                            </a>
+                            <!-- Notification -->
+                            <div class="header_notify ">
+                                <!-- Header Noti -->
+                                <header class="header_notify-header">
+                                    <h3>Thông báo mới nhận</h3>
+                                </header>
+                                <!-- Arr Noti -->
+                                <ul class="header_notify-list">
+                                    <!-- Item1 -->
+                                    <?php
+                                        
+                                    ?>
+                                   
+                                </ul>
+                                <div class="header_notify-footer">
+                                    <a href="" class="header_notify-footer-btn">Xem tất cả</a>
+                                </div>
+
+                            </div>
+                            <!--  -->
+                        </li>
+                        <li class="header_navbar-item">
+                            <a href="" class="header_navbar-item-link">
+                                <i class="header_navbar-icon fa-solid fa-circle-question"></i>
+                                <a style="text-decoration:none;color:white;" href="https://support.google.com/chrome/?p=help&ctx=keyboard#topic=7439538">
+                                <p style="margin:0;font-weight:600;font-size:1.6rem;">Trợ giúp</p>
+                            </a>
+                            </a>
+                        </li>
+                        <?php if(!isset($_SESSION['Acc'])){ ?>
+                            <li class="header_navbar-item header_navbar-item--strong header_navbar-item--separate btnregister">
+                                <p style="margin:0;font-weight:700;font-size:1.6rem;">Đăng kí</p>
+                             </li>
+                             <li  class="header_navbar-item header_navbar-item--strong btnlogin">
+                                <p style="margin:0;font-weight:700;font-size:1.6rem;">Đăng nhập</p>
+                            </li>
+                        <?php }
+                        else{ ?>
+                             <li class="header_navbar-item header_navbar-user">
+                             <img src="/img/user.jpg" alt="" class="header_navbar-user-img">
+                             <span class="header_navbar-user-name">
+                             <?php
+                                echo $_SESSION['Acc'];
+                             ?>
+                             </span>
+                             <ul class="header_navbar-user-menu">
+                                 <li class="header_navbar-user-item">
+                                     <a href="">Tài khoản của tôi</a>
+                                 </li>
+                                 <li class="header_navbar-user-item">
+                                     <a href="index.php?controller=bill&action=showBill">Đơn mua </a>                                
+                                 <li class="header_navbar-user-item">
+                                 <li class="header_navbar-user-item">
+                                     <a href="index.php?controller=Cart&action=addCart">Giỏ hàng </a>                                
+                                 <li class="header_navbar-user-item">
+                                     <a href="index.php?controller=user&action=logout">Đăng xuất</a>                                
+                                 </li>
+                             </ul>
+                         </li>
+                        <?php } ?>                                     
+                    </ul>
+                    <!--  -->
+                </nav>
+                <!-- SEARCH -->
+                <div class="header-with-search ">
+                    <label for="mobile-search-checkbox" class="header_mobile-search">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <!-- LOGO -->
+                    <div class="header_logo ">
+                        <img src="/img/logo.jpg" class="header_logo-img">
+                    </div>
+                    
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header_search-checkbox">
+                    <!-- BODY SEARCH -->
+                    <form action="index.php?controller=product&action=findtypeproduct"method="get">
+                        <div class="header_search ">
+                            <div class="header_search-input-wrap">
+                                <input type="text" name="find" class="header_search-input" placeholder="Nhập để tìm kiếm sản phẩm">
+                                <!-- HISTORY -->
+                                {{!-- <div class="header_search-history">
+                                    <h3 class="header_search-history-heading">Lịch sử tìm kiếm</h3>
+                                    <ul class="header_search-history-list">
+                                        <li class="header_search-history-item">
+                                            <a href="" class="">Giày Nike</a>
+                                        </li>
+                                        <li class="header_search-history-item">
+                                            <a href="" class="">Giày Adidas</a>
+                                        </li>
+                                        <li class="header_search-history-item">
+                                            <a href="" class="">Giày Hot</a>
+                                        </li>
+                                    </ul>
+                                </div> --}}
+                            </div>
+                            <button type="submit" class="header_search-btn">
+                                <i class="header_search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </form>     
+                </div>
+            </div>
+        </header>
+        <!-- login -->
+        <div class="modal">
+        <!-- OVERPLAY -->
+        <div class="modal_overplay">
+            
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <!-- BODY -->
+            <div class="modal_body">
+                <div class="col-12">
+                    <h1 style="font-size:36px;margin-left: 200px;font-weight: 700;">Đăng nhập</h1>
+                    <form action="/user/login" method="post">
+                        <div class="auth-form"> 
+                            <div class="auth-form_container"> 
+                                <!-- header -->
+                                    <div class="auth-form_header">
+                                        <h3 class="auth-form_heading">ĐĂNG NHẬP</h3>
+                                        <span class="auth-form_switch-btn">Đăng ký</span>
+                                    </div>  
+                                <!-- thẻ input -->
+                                    <div class="auth-form_from">
+                                        <div class="auth-form_group">
+                                            <input type="text" id="id" class="auth-form_input" name="inputacc" placeholder="Nhập tài khoản của bạn">
+                                        </div>
+                                        <div class="auth-form_group">
+                                            <input type="password" id="hoten" class="auth-form_input" name="inputpass" placeholder="Nhập mật khẩu của bạn">
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="auth-form_aside"> 
+                                    <div class="auth-form_help">
+                                                <a href="" class="auth-form_help-link auth-form_help-forget">Quên mật khẩu</a>
+                                                <span class="auth-form_help-separate"></span>
+                                                <a href="" class="auth-form_help-link">Cần trợ giúp ?</a>
+                                    </div>
+                                    </div>
+                                        <!-- nút cuối -->
+                                        <div class="auth-form_control">
+                                            <button class="btn btn-close">TRỞ LẠI</button>
+                                            <button type="submit" name= "login" class="btn btn--primary">ĐĂNG NHẬP</button>
+                                        </div>
+
+                                </div>
+                            </div>
+
+                                    <div class="auth-form_socials">
+                                    <a href="" class="auth-form_socials-facebook btn btn--sizeS btn--with-icon">
+                                        <i class="auth-form_socials-icon fa-brands fa-facebook"></i>
+                                        <span class="auth-form_socials-span">Đăng nhập với Facebook </span>
+                                    </a>
+                                    <a href="" class="auth-form_socials-google btn btn--sizeS btn--with-icon">
+                                        <i class="auth-form_socials-icon fa-brands fa-google"></i>
+                                        <span class="auth-form_socials-span">Đăng nhập với Google </span>
+                                    </a>
+                                    </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        </div>
+            
+    </div>
+    <!-- register -->
+        <div class="modal"> 
+        <!-- OVERPLAY -->
+        <div class="modal_overplay ">
+            
+        </div>
+        <!-- BODY -->
+        <div class="modal_body">
+          <!-- Register Form -->
+        <div class="auth-form">
+            <div class="auth-form_container">
+            <h1 style="font-size:36px;margin-left: 200px;font-weight: 700;">Đăng kí</h1>
+            <!--  Heading Đnhập Đkí -->
+            <!-- Form đăng kí -->
+        <form action="/user/register" method="post">
+            <div class="auth-form_header">
+                <h3 class="auth-form_heading">Đăng Ký</h3>
+                <span class="auth-form_switch-btn">Đăng nhập</span>
+            </div>
+
+            <!-- Các Thẻ input -->
+            <div class="auth-form_from">
+                <div class="auth-form_group">
+                    <input type="text" class="auth-form_input" name="Acc" placeholder="Tên đăng nhập">
+                </div>
+                
+                <div class="auth-form_group">
+                    <input type="password" class="auth-form_input" name="Pass" placeholder="Mật khẩu">
+                </div>
+
+                <div class="auth-form_group">
+                    <input type="password" class="auth-form_input" name="Passn" placeholder="Nhập lại mật khẩu ">
+                </div>
+              </div>
+
+        <!-- Text Police -->
+        <div class="auth-form_aside">
+            <p class="auth-form_police-text">
+                Bằng việc đăng kí bạn đã đồng ý với Shopee về <br>
+                <a href="" class="auth-form_police-link">Điều khoản dịch vụ</a> &
+                <a href="" class="auth-form_police-link">Chính sách bảo mật</a>
+            </p>
+        </div>
+
+        <!-- Nút ĐKi và ĐNhập -->
+        <div class="auth-form_control">
+            <button class="btn btn-close">TRỞ LẠI</button>
+            <button name="register" class="btn btn--primary">ĐĂNG KÍ</button>
+        </div>
+    </div>
+    <!-- Nút GG và FB -->
+    <div class="auth-form_socials">
+        <a href="" class="auth-form_socials-facebook btn btn--sizeS btn--with-icon">
+            <i class="auth-form_socials-icon fa-brands fa-facebook"></i>
+            <span class="auth-form_socials-span">Kết nối với Facebook </span>
+        </a>
+        <a href="" class="auth-form_socials-google btn btn--sizeS btn--with-icon">
+            <i class="auth-form_socials-icon fa-brands fa-google"></i>
+            <span class="auth-form_socials-span">Kết nối với Google </span>
+        </a>
+    </div>
     </form>
-  </div>
-</nav>
+    </div>
+        </div>
+    </div>
+    <script>
+        const btnregister=document.querySelector(".btnregister");
+        const btnlogin=document.querySelector(".btnlogin");
+        const modals=document.querySelectorAll(".modal");
+        const bodymodals=document.querySelectorAll(".modal_body");
+        const btnclose=document.querySelector(".btn-close");
+        btnlogin.onclick=function(){
+            
+            modals[0].classList.add('openmodal');
+            
+        }
+        btnregister.onclick=function(){
+            modals[1].classList.add('openmodal')
+
+        }
+        modals.forEach((modal)=>{
+            modal.onclick=function(){
+                document.querySelector(".modal.openmodal").classList.remove('openmodal');
+                document.querySelector(".modal.openmodal").classList.remove('openmodal');
+    
+            }
+        })
+        bodymodals.forEach((bodymodal)=>{
+            bodymodal.addEventListener('click',function(event){
+                event.stopPropagation();
+            })
+            
+
+        })
+        btnclose.onclick=function(){
+           
+        }
+    </script>

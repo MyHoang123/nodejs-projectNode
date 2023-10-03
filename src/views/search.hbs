@@ -1,16 +1,89 @@
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<link rel="stylesheet" href="./views/Asset/css/giaodien.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="accordion" id="accordionExample" >
+  <div class="accordion-item" style="background-color: #98d4f3;">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button"style="background-color: #98d4f3;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        
+      <div style="font-size: 30px; color:#fff" > Quản Lý Danh Mục</div>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body" style="list-style: none;">
+        <li>
+           <a href="admin.php?controller=category" style="text-decoration: none; font-size: 22px; color:#fff ">Tất cả danh mục</a> 
+        </li>
+        <li>
+           <a href="admin.php?controller=category&action=insert" style="text-decoration: none;font-size: 22px; color:#fff">Thêm danh mục</a> 
+        </li>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  <div class="accordion-item"  style="background-color: #98d4f3;">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" style="background-color: #98d4f3;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <div style="font-size: 30px; color:#fff"> Quản Lý Sản Phẩm</div>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body" style="list-style: none;">
+      <li>
+           <a href="admin.php?controller=product" style="text-decoration: none;font-size: 22px; color:#fff">Tất cả sản phẩm</a> 
+        </li>
+        <li>
+           <a href="admin.php?controller=product&action=insert"style="text-decoration: none;font-size: 22px; color:#fff">Thêm sản phẩm</a> 
+        </li>
+      </div>
+    </div>
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  <div class="accordion-item"  style="background-color: #98d4f3;">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" style="background-color: #98d4f3;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <div style="font-size: 30px; color:#fff"> Quản Lý Tin Tức</div>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body" style="list-style: none;">
+      <li>
+           <a href="admin.php?controller=news" style="text-decoration: none;font-size: 22px; color:#fff">Tất cả tin tức</a> 
+        </li>
+        <li>
+           <a href="admin.php?controller=news&action=insert" style="text-decoration: none;font-size: 22px; color:#fff">Thêm tin tức</a> 
+        </li>
+      </div>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <div class="accordion-item"  style="background-color: #98d4f3;">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" style="background-color: #98d4f3;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour  " aria-expanded="false" aria-controls="collapseThree">
+      <div style="font-size: 30px; color:#fff"> Quản Lý Tài khoản</div>
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body" style="list-style: none;">
+      <li>
+           <a href="admin.php?controller=account" style="text-decoration: none;font-size: 22px; color:#fff">Tất cả tài khoản</a> 
+        </li>
+        <li>
+           <a href="" style="text-decoration: none;font-size: 22px; color:#fff">Thêm tài khoản quyền Admin</a> 
+        </li>
+      </div>
+    </div>
+  </div><div class="accordion-item"  style="background-color: #98d4f3;">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" style="background-color: #98d4f3;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive  " aria-expanded="false" aria-controls="collapseThree">
+      <div style="font-size: 30px; color:#fff"> Quản Lý Đơn Hàng</div>
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div class="accordion-body" style="list-style: none;">
+      <li>
+           <a href="" style="text-decoration: none;font-size: 22px; color:#fff">Tất cả đơn hàng</a> 
+        </li>
+        <!-- <li>
+           <a href="admin.php?controller=account&action=insert" style="text-decoration: none;font-size: 22px; color:#fff">Thêm tài khoản quyền Admin</a> 
+        </li> -->
+      </div>
+    </div>
+  </div>
+</div>
